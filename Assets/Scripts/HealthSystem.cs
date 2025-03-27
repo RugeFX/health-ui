@@ -92,8 +92,8 @@ public class HealthSystem : MonoBehaviour
         while (elapsed < animationDuration)
         {
             elapsed += Time.deltaTime;
-            float strength = healCurve.Evaluate(elapsed / animationDuration) * .35f;
-            background.color = initialBackgroundColor + Color.green.WithAlpha(.2f) * strength;
+            float strength = healCurve.Evaluate(elapsed / animationDuration) * .2f;
+            background.color = initialBackgroundColor + Color.green * strength;
             yield return null;
         }
 
@@ -107,8 +107,8 @@ public class HealthSystem : MonoBehaviour
         while (elapsed < animationDuration)
         {
             elapsed += Time.deltaTime;
-            float strength = damageCurve.Evaluate(elapsed / animationDuration) * .35f;
-            background.color = initialBackgroundColor + Color.red.WithAlpha(.2f) * strength;
+            float strength = damageCurve.Evaluate(elapsed / animationDuration) * .2f;
+            background.color = initialBackgroundColor + Color.red * strength;
             yield return null;
         }
 
